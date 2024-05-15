@@ -67,7 +67,7 @@
                 <h1 class="h1home">Front-End Web Developer</h1>
                 <div class="section_line2"><span>Hello. </span></div>
                 <p>       
-                I have ten years of work experience in web design and web development. I have a problem-solver attitude and a love for polished projects.<br>I aim to give clients work that looks great and works technically well. I have worked on smaller projects, planning and executing all aspects. As well as working collaboratively in teams executing digital campaigns for large companies.
+                I have over ten years of work experience in web design and web development. I have a problem-solver attitude and a love for polished projects.<br>I aim to give clients work that looks great and works technically well. I have worked on smaller projects, planning and executing all aspects. As well as working collaboratively in teams executing digital campaigns for large companies.
                 </p>
                 <h3>Scroll down to see my work <span id="down_arrow__outer"><img id="down_arrow" src="img/arrow_down.png"></span></h3>
             </div>
@@ -214,88 +214,8 @@
                   <label for="Message">*Message:</label>
                   <textarea name="message" minlength="2" maxlength="800" class="form-control" id="Message" rows="10" required></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Send 2</button>
+                <button type="submit" class="btn btn-primary">Send</button>
               </form>
-              
-              <!-- <script>
-                document.getElementById("contactform").addEventListener("submit", function(event) {
-                  // Prevent default form submission
-                  event.preventDefault();
-                
-                  // Submit the form asynchronously using Fetch API
-                  fetch(this.action, {
-                    method: "POST",
-                    body: new FormData(this)
-                  })
-                  .then(response => {
-                    // Check if the response is OK (status code 200)
-                    if (response.ok) {
-                      // Redirect to your custom URL after successful submission
-                      window.location.href = "https://leearmitstead.nz/thanks";
-                    } else {
-                      // Handle error response
-                      console.error("Form submission failed:", response.statusText);
-                      alert("Form submission failed. Please try again later.");
-                    }
-                  })
-                  .catch(error => {
-                    // Handle fetch error
-                    console.error("Error submitting form:", error);
-                    alert("An error occurred while submitting the form. Please try again later.");
-                  });
-                });
-                </script> -->
-
-
-
-                <form action="https://api.staticforms.xyz/submit" method="post">
-                    <input type="text" name="name" placeholder="Your Name">
-                    <input type="text" name="email" placeholder="Your Email" />
-                    <textarea name="message"></textarea>
-                    
-                    <input type="text" name="honeypot" style="display:none">
-            
-                    <input type="hidden" name="accessKey" value="d085ed4f-f0d7-4bf6-b270-451518f5e467">
-                    <input type="hidden" name="subject" value="Contact us from - example.com" />
-                    <input type="hidden" name="replyTo" value="@">
-                    <input type="hidden" name="redirectTo" value="/thanks">
-                    <input type="submit" value="Submit staticforms" />
-                </form>
-
-
-
-                    <form action="contact.php" method="POST" id="contactform" enctype="multipart/form-data" role="form">
-                        <div class="form-group">
-                            <div class="row">
-                                    <div class="col">
-                                        <label for="firstname">*First name:</label>
-                                        <input name="firstname" minlength="2" maxlength="10" type="text" class="form-control" id="firstname" required>
-                                    </div>
-                                    <div class="col">
-                                        <label for="lastname">*Last name:</label>
-                                        <input name="lastname" minlength="2" maxlength="16" type="text" class="form-control" id="lastname" required>
-                                    </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">*Email address:</label>
-                            <input name="email" type="email" class="form-control" id="email" aria-describedby="emailHelp" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="Subject">*Subject:</label>
-                            <input name="subject" minlength="2" maxlength="30" type="text" class="form-control" id="Subject" required>
-                                <!-- !!!!!!!!!!!! -->
-                            <label class="subject2" for="subject2"></label>
-                            <input class="subject2" tabindex="-1" autocomplete="off" type="text" id="subject2" name="subject2">
-                                <!-- !!!!!!!!!!!! -->
-                        </div>
-                        <div class="form-group">    
-                            <label for="Message">*Message:</label>
-                            <textarea name="message" minlength="2" maxlength="800" class="form-control" id="Message" rows="8" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
-
 
             </div>
             <div class="col-md-2">
