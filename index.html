@@ -214,37 +214,35 @@
                   <label for="Message">*Message:</label>
                   <textarea name="message" minlength="2" maxlength="800" class="form-control" id="Message" rows="10" required></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Send</button>
+                <button type="submit" class="btn btn-primary">Send 1</button>
               </form>
               
               <script>
                 document.getElementById("contactform").addEventListener("submit", function(event) {
-                  event.preventDefault(); // Prevent default form submission
+                  // Prevent default form submission
+                  event.preventDefault();
                 
-                  // Validate the form
-                  if (this.checkValidity()) {
-                    // Fetch API to submit form data asynchronously
-                    fetch(this.action, {
-                      method: "POST",
-                      body: new FormData(this)
-                    })
-                    .then(response => {
-                      if (response.ok) {
-                        alert("Form submitted successfully!"); // Show success message
-                        window.location.href = '/thanks'; // Redirect to "/thanks"
-                        // Optionally, reset the form
-                        this.reset();
-                      } else {
-                        alert("An error occurred while submitting the form. Please try again."); // Show error message
-                      }
-                    })
-                    .catch(error => {
-                      console.error("Error:", error);
-                      alert("An error occurred while submitting the form. Please try again.");
-                    });
-                  } else {
-                    alert("Please fill out all required fields."); // Show validation error message
-                  }
+                  // Submit the form asynchronously using Fetch API
+                  fetch(this.action, {
+                    method: "POST",
+                    body: new FormData(this)
+                  })
+                  .then(response => {
+                    // Check if the response is OK (status code 200)
+                    if (response.ok) {
+                      // Redirect to your custom URL after successful submission
+                      window.location.href = "/thanks";
+                    } else {
+                      // Handle error response
+                      console.error("Form submission failed:", response.statusText);
+                      alert("Form submission failed. Please try again later.");
+                    }
+                  })
+                  .catch(error => {
+                    // Handle fetch error
+                    console.error("Error submitting form:", error);
+                    alert("An error occurred while submitting the form. Please try again later.");
+                  });
                 });
                 </script>
 
