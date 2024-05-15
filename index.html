@@ -217,7 +217,7 @@
                 <button type="submit" class="btn btn-primary">Send 2</button>
               </form>
               
-              <script>
+              <!-- <script>
                 document.getElementById("contactform").addEventListener("submit", function(event) {
                   // Prevent default form submission
                   event.preventDefault();
@@ -244,10 +244,23 @@
                     alert("An error occurred while submitting the form. Please try again later.");
                   });
                 });
-                </script>
+                </script> -->
 
 
 
+                <form action="https://api.staticforms.xyz/submit" method="post">
+                    <input type="text" name="name" placeholder="Your Name">
+                    <input type="text" name="email" placeholder="Your Email" />
+                    <textarea name="message"></textarea>
+                    
+                    <input type="text" name="honeypot" style="display:none">
+            
+                    <input type="hidden" name="accessKey" value="d085ed4f-f0d7-4bf6-b270-451518f5e467">
+                    <input type="hidden" name="subject" value="Contact us from - example.com" />
+                    <input type="hidden" name="replyTo" value="@">
+                    <input type="hidden" name="redirectTo" value="/thanks">
+                    <input type="submit" value="Submit staticforms" />
+                </form>
 
 
 
