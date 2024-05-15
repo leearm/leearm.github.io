@@ -4,7 +4,8 @@
     $email = $_POST['email'];
     $subject = $_POST['subject'];
     $message = $_POST['message'];
-    //honey pot field
+    
+    // h o n e y  p o t  f i e l d
     $honeypot = $_POST['subject2'];
 
     $email_from = "$firstname $lastname";

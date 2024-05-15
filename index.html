@@ -182,7 +182,78 @@
                 <div class="section_line2"><span>Contact. </span></div>
                 <p>I am currently available for short or long term contracts. If you would like to get in touch, fill in the form and I will get back to you shortly.</p>
     
-                    <form action="contact.php" method="POST" id="contactform" enctype="multipart/form-data" role="form">
+
+                <form
+                action="https://formspree.io/f/mnqerodq"
+                method="POST"
+                id="contactform"
+                enctype="multipart/form-data"
+                role="form"
+              >
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col">
+                      <label for="firstname">*First name:</label>
+                      <input name="firstname" minlength="2" maxlength="10" type="text" class="form-control" id="firstname" required>
+                    </div>
+                    <div class="col">
+                      <label for="lastname">*Last name:</label>
+                      <input name="lastname" minlength="2" maxlength="16" type="text" class="form-control" id="lastname" required>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="email">*Email address:</label>
+                  <input name="email" type="email" class="form-control" id="email" aria-describedby="emailHelp" required>
+                </div>
+                <div class="form-group">
+                  <label for="Subject">*Subject:</label>
+                  <input name="subject" minlength="2" maxlength="30" type="text" class="form-control" id="Subject" required>
+                </div>
+                <div class="form-group">    
+                  <label for="Message">*Message:</label>
+                  <textarea name="message" minlength="2" maxlength="800" class="form-control" id="Message" rows="10" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send</button>
+              </form>
+              
+              <script>
+                document.getElementById("contactform").addEventListener("submit", function(event) {
+                  event.preventDefault(); // Prevent default form submission
+                
+                  // Validate the form
+                  if (this.checkValidity()) {
+                    // Fetch API to submit form data asynchronously
+                    fetch(this.action, {
+                      method: "POST",
+                      body: new FormData(this)
+                    })
+                    .then(response => {
+                      if (response.ok) {
+                        alert("Form submitted successfully!"); // Show success message
+                        window.location.href = '/thanks'; // Redirect to "/thanks"
+                        // Optionally, reset the form
+                        this.reset();
+                      } else {
+                        alert("An error occurred while submitting the form. Please try again."); // Show error message
+                      }
+                    })
+                    .catch(error => {
+                      console.error("Error:", error);
+                      alert("An error occurred while submitting the form. Please try again.");
+                    });
+                  } else {
+                    alert("Please fill out all required fields."); // Show validation error message
+                  }
+                });
+                </script>
+
+
+
+
+
+
+                    <!-- <form action="contact.php" method="POST" id="contactform" enctype="multipart/form-data" role="form">
                         <div class="form-group">
                             <div class="row">
                                     <div class="col">
@@ -201,18 +272,18 @@
                         </div>
                         <div class="form-group">
                             <label for="Subject">*Subject:</label>
-                            <input name="subject" minlength="2" maxlength="30" type="text" class="form-control" id="Subject" required>
+                            <input name="subject" minlength="2" maxlength="30" type="text" class="form-control" id="Subject" required> -->
                                 <!-- !!!!!!!!!!!! -->
-                            <label class="subject2" for="subject2"></label>
-                            <input class="subject2" tabindex="-1" autocomplete="off" type="text" id="subject2" name="subject2">
+                            <!-- <label class="subject2" for="subject2"></label>
+                            <input class="subject2" tabindex="-1" autocomplete="off" type="text" id="subject2" name="subject2"> -->
                                 <!-- !!!!!!!!!!!! -->
-                        </div>
+                        <!-- </div>
                         <div class="form-group">    
                             <label for="Message">*Message:</label>
                             <textarea name="message" minlength="2" maxlength="800" class="form-control" id="Message" rows="3" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
+                    </form> -->
             </div>
             <div class="col-md-2">
             </div>
